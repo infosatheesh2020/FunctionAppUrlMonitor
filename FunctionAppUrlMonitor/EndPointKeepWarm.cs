@@ -16,10 +16,6 @@ namespace FunctionAppUrlMonitor
         private static HttpClient _httpClient = new HttpClient();
         private static string _endPointsToHit = Environment.GetEnvironmentVariable("EndPointUrls");
         private static string AppInsights_Instrumentation_key = Environment.GetEnvironmentVariable("AppInsights_Instrumentation_key");
-       // private static string AppInsights_Instrumentation_key = "79e54034-efde-4c75-bb38-dfb4d7c270af";
-       // private static string _endPointsToHit = "https://www.google.com;https://www.microsoft.com;http://52.172.33.1";
-
-
 
         private static TelemetryConfiguration configuration = new TelemetryConfiguration { InstrumentationKey = AppInsights_Instrumentation_key };
         private static TelemetryClient client = new TelemetryClient(configuration);
