@@ -22,7 +22,7 @@ namespace FunctionAppUrlMonitor
 
         [FunctionName("EndPointKeepWarm")]
         // run every 1 minute..
-        public static async Task Run([TimerTrigger("0 */1 * * * *")]TimerInfo myTimer, TraceWriter log)
+        public static async Task Run([TimerTrigger("%MyTimerExpression%")]TimerInfo myTimer, TraceWriter log)
         {
             log.Info($"Run(): EndPointKeepWarm function executed at: {DateTime.Now}. Past due? {myTimer.IsPastDue}");
 
